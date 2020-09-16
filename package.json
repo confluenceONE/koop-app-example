@@ -13,7 +13,7 @@
     "koop-provider-craigslist": "^2.0.1"
   },
   "devDependencies": {
-    "@koopjs/cli": "^0.6.0",
+    "@koopjs/cli": "^0.7.0",
     "standard": "^14.3.1",
     "tap-spec": "^5.0.0",
     "tape": "^5.0.0"

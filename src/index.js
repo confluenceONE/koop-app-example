@@ -1,10 +1,14 @@
 const config = require('config')
 const Koop = require('koop')
+const koop = new Koop(config)
 const routes = require('./routes')
 const plugins = require('./plugins')
+const FeatureServer = require('koop-output-geoservices')
+koop.register(FeatureServer)
+//koop.register(Provider)
 
 // initiate a koop app
-const koop = new Koop()
+
 
 // register koop plugins
 plugins.forEach((plugin) => {
@@ -18,5 +22,27 @@ routes.forEach((route) => {
   })
 })
 
+
+
+
+//Normalize a port into a number, string, or false.
+ 
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
 // start the server
-koop.server.listen(config.port, () => koop.log.info(`Koop server listening at ${config.port}`))
+var port = normalizePort(process.env.PORT || config.port);
+koop.server.listen(port, () => koop.log.info(`Koop server listening at ${port}`))

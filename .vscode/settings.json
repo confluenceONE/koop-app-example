@@ -1,0 +1,8 @@
+{
+    "appService.deploySubpath": ".",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/ce39bbed-aa5e-44e3-9f37-e715de60c591/resourceGroups/rg-EastAUS-dev-PPS-API01/providers/Microsoft.Web/sites/koopserviceapp01"
+}
